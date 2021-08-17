@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "928930204403",
+    "project_id": "ello-messenger",
+    "storage_bucket": "ello-messenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928930204403:android:4f9b1bc692e2ba78970586",
+        "android_client_info": {
+          "package_name": "com.example.ello_messenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928930204403-r6ptpml6sn20imi7eulh219ekm0iedtn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWcRX_cZXQVY5RBxgrAITx8rNYHs4JGJg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928930204403-r6ptpml6sn20imi7eulh219ekm0iedtn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
