@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shop/widgets/product_item.dart';
 
-import '../models/products.dart';
+import '../models/product.dart';
 
 class ProductsOverviewScreen extends StatelessWidget {
+  static const String routeName = '/products-overview';
   const ProductsOverviewScreen({Key? key}) : super(key: key);
 
   @override
