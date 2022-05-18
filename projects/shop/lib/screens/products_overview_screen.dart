@@ -1,105 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:shop/widgets/product_item.dart';
 
-import '../widgets/app_drawer.dart';
-import '../widgets/products_grid.dart';
-import '../widgets/badge.dart';
-import '../providers/cart.dart';
-import './cart_screen.dart';
-import '../providers/products.dart';
+import '../models/products.dart';
 
-enum FilterOptions {
-  Favorites,
-  All,
-}
-
-class ProductsOverviewScreen extends StatefulWidget {
-  @override
-  _ProductsOverviewScreenState createState() => _ProductsOverviewScreenState();
-}
-
-class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
-  var _showOnlyFavorites = false;
-  var _isInit = true;
-  var _isLoading = false;
-
-  @override
-  void initState() {
-    // Provider.of<Products>(context).fetchAndSetProducts(); // WON'T WORK!
-    // Future.delayed(Duration.zero).then((_) {
-    //   Provider.of<Products>(context).fetchAndSetProducts();
-    // });
-    super.initState();
-  }
-
-  @override
-  void didChangeDependencies() {
-    if (_isInit) {
-      setState(() {
-        _isLoading = true;
-      });
-      Provider.of<Products>(context).fetchAndSetProducts().then((_) {
-        setState(() {
-          _isLoading = false;
-        });
-      });
-    }
-    _isInit = false;
-    super.didChangeDependencies();
-  }
+class ProductsOverviewScreen extends StatelessWidget {
+  const ProductsOverviewScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MyShop'),
-        actions: <Widget>[
-          PopupMenuButton(
-            onSelected: (FilterOptions selectedValue) {
-              setState(() {
-                if (selectedValue == FilterOptions.Favorites) {
-                  _showOnlyFavorites = true;
-                } else {
-                  _showOnlyFavorites = false;
-                }
-              });
-            },
-            icon: Icon(
-              Icons.more_vert,
-            ),
-            itemBuilder: (_) => [
-                  PopupMenuItem(
-                    child: Text('Only Favorites'),
-                    value: FilterOptions.Favorites,
-                  ),
-                  PopupMenuItem(
-                    child: Text('Show All'),
-                    value: FilterOptions.All,
-                  ),
-                ],
-          ),
-          Consumer<Cart>(
-            builder: (_, cart, ch) => Badge(
-                  child: ch,
-                  value: cart.itemCount.toString(),
-                ),
-            child: IconButton(
-              icon: Icon(
-                Icons.shopping_cart,
-              ),
-              onPressed: () {
-                Navigator.of(context).pushNamed(CartScreen.routeName);
-              },
-            ),
-          ),
-        ],
+        title: const Text('My Shop'),
       ),
-      drawer: AppDrawer(),
-      body: _isLoading
-          ? Center(
-              child: CircularProgressIndicator(),
-            )
-          : ProductsGrid(_showOnlyFavorites),
+      body: GridView.builder(
+        padding: const EdgeInsets.all(10.0),
+        itemCount: Products.loadedProducts.length,
+        itemBuilder: (ctx, i) => ProductItem(
+          title: Products.loadedProducts[i].title,
+          description: Products.loadedProducts[i].description,
+          imageURL: Products.loadedProducts[i].imageURL,
+        ),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
+      ),
     );
   }
 }
