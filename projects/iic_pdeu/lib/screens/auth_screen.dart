@@ -75,7 +75,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 Navigator.of(context)
                     .pushReplacementNamed(HomeScreen.routeName);
               },
-              child: const Text('Sign In'),
+              child: isSignUp ? const Text('Sign up') : const Text('Sign in'),
             ),
           ],
         ),
