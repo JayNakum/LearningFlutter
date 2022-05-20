@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iic_pdeu/screens/start_screen.dart';
 import 'package:iic_pdeu/screens/auth_screen.dart';
 import 'package:iic_pdeu/screens/home_screen.dart';
 
@@ -13,12 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'IIC PDEU',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: const HomeScreen(),
+      home: const AuthScreen(),
       routes: {
-        '/': (ctx) => const AuthScreen(),
+        StartScreen.routeName: (ctx) => const StartScreen(),
+        AuthScreen.routeName: (ctx) => const AuthScreen(),
         HomeScreen.routeName: (ctx) => const HomeScreen(),
       },
     );
