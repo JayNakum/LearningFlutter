@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iic_pdeu/screens/home_screen.dart';
 
 class AuthScreen extends StatefulWidget {
   static const routeName = '/auth';
@@ -71,6 +72,8 @@ class _AuthScreenState extends State<AuthScreen> {
               autofocus: true,
               onPressed: () {
                 FocusScope.of(context).unfocus();
+                Navigator.of(context)
+                    .pushReplacementNamed(HomeScreen.routeName);
               },
               child: const Text('Sign In'),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iic_pdeu/screens/auth_screen.dart';
 
 class StartScreen extends StatelessWidget {
   static const routeName = '/start';
@@ -17,7 +18,9 @@ class StartScreen extends StatelessWidget {
           ),
           ElevatedButton(
             autofocus: true,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed(AuthScreen.routeName);
+            },
             child: const Text('Get Started'),
           ),
         ],

@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'IIC PDEU',
-      home: const AuthScreen(),
+      home: const StartScreen(),
       routes: {
         StartScreen.routeName: (ctx) => const StartScreen(),
         AuthScreen.routeName: (ctx) => const AuthScreen(),
