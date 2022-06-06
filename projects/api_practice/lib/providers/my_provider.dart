@@ -1,8 +1,9 @@
 import 'dart:convert';
 
-import 'package:api_practice/models/movie.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+
+import '../models/movie.dart';
 
 class MyProvider with ChangeNotifier {
   final url = Uri.parse(
