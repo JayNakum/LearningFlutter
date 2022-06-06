@@ -1,8 +1,8 @@
-import 'package:api_practice/widgets/movies_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/my_provider.dart';
+import '../widgets/movies_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

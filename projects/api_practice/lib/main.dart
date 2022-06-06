@@ -1,9 +1,10 @@
-import 'package:api_practice/providers/my_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import './providers/my_provider.dart';
+
 import './screens/splash_screen.dart';
-import 'screens/home_screen.dart';
+import './screens/movies_screen.dart';
 
 void main() {
   runApp(
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       home: const SplashScreen(),
       routes: {
-        '/home': (context) => const HomeScreen(),
+        '/movies': (context) => const HomeScreen(),
       },
     );
   }
