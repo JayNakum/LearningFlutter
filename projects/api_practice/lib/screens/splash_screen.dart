@@ -11,7 +11,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  var _isLoading = true;
   MyProvider? provider;
 
   @override
@@ -19,9 +18,6 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     provider = Provider.of<MyProvider>(context, listen: false);
     provider!.fetchAndSetMovies().then((_) {
-      setState(() {
-        _isLoading = false;
-      });
       Future.delayed(const Duration(seconds: 3), () {
         Navigator.of(context).pushReplacementNamed('/movies');
       });
