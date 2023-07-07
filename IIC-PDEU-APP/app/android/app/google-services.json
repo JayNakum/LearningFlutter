@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "88151507732",
+    "project_id": "iicpdeu-app",
+    "storage_bucket": "iicpdeu-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88151507732:android:7898f8567a1b462b0b7801",
+        "android_client_info": {
+          "package_name": "in.ac.pdpu.iic.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88151507732-sboin36lb39ubg1q0j8bm3e831oko9t2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUFim2MUqkltSkLN2Zo-VyGGcJy_mBg5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88151507732-sboin36lb39ubg1q0j8bm3e831oko9t2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "88151507732-g9ph000kf13ndc9sfu36al7tibqisdnu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.iicPdeu"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

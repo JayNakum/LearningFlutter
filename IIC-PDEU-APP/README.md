@@ -1,0 +1,1 @@
+![IIC PDEU](./app/assets/images/logo.png)
